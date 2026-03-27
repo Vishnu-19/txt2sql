@@ -1,25 +1,36 @@
-# txt-sql: RAG Text-to-SQL MVP
+# txt2sql: RAG Text-to-SQL MVP
 
-## Overview
-txt-sql is a FastAPI-based backend that translates natural language questions into SQL queries, executes them on your database, and returns both the raw results and a natural language summary using an LLM (OpenAI GPT-4o-mini). It uses Retrieval-Augmented Generation (RAG) to improve SQL generation accuracy.
 
-## Features
-- Natural language to SQL translation using LLM
-- RAG-based schema retrieval for context-aware SQL
-- Supports PostgreSQL and SQLite
-- Caching for engines, vector stores, and query results
-- Returns both SQL, data, and a text summary
+## Problem Statement
+Business users, product owners, and analysts often need insights from databases but lack the ability to write complex SQL queries. This creates a bottleneck, requiring constant support from data engineers or developers to translate questions into SQL, run them, and interpret the results. The process is slow, error-prone, and limits self-service analytics.
+
+## Solution
+**txt2sql** enables anyone to ask questions about their data in plain English. It automatically:
+- Converts natural language questions into accurate SQL queries
+- Executes those queries on your database (PostgreSQL or SQLite)
+- Returns both the raw data and a clear, concise natural language summary
+
+This empowers non-technical users to get answers instantly, reduces engineering workload, and accelerates data-driven decision making.
+
+---
+
+## Technical Overview
+txt2sql is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG) and OpenAI's GPT-4o-mini to generate context-aware SQL and summarize results. It features:
+- RAG-based schema retrieval for improved SQL accuracy
+- LLM-powered SQL and text generation
+- In-memory caching for performance
+- Modular, extensible Python codebase
 
 ## Requirements
 - Python 3.9+
 - OpenAI API key
-- (Optional) PostgreSQL or SQLite database
+- PostgreSQL or SQLite database
 
 ## Setup Instructions
 1. **Clone the repository:**
 	 ```sh
 	 git clone <repo-url>
-	 cd txt-sql
+	 cd txt2sql
 	 ```
 2. **Install dependencies:**
 	 ```sh
@@ -83,4 +94,4 @@ The app uses in-memory caching for:
 - Query results (with TTL)
 
 ## License
-MIT (or specify your license)
+MIT
