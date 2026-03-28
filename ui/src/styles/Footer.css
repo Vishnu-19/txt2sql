@@ -1,0 +1,21 @@
+.app-footer {
+  width: 100%;
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+/* Centered content like a clean app bar */
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* Text */
+.footer-text {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}

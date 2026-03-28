@@ -1,0 +1,248 @@
+.db-config-card {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(88, 86, 214, 0.05));
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.db-config-card.connected {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(34, 197, 94, 0.05));
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.config-header {
+  margin-bottom: 24px;
+}
+
+.config-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.config-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-input,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select {
+  padding: 12px 14px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(129, 140, 248, 0.2);
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.form-input::placeholder,
+input::placeholder {
+  color: rgba(241, 245, 249, 0.5);
+}
+
+select {
+  cursor: pointer;
+}
+
+select option {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.connect-btn {
+  padding: 12px 28px;
+  background: linear-gradient(135deg, var(--color-accent), #a78bfa);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.connect-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+}
+
+.connect-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.connect-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-error {
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.connected-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #10b981;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: #10b981;
+}
+
+.disconnect-btn {
+  padding: 8px 20px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 6px;
+  color: #fca5a5;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.disconnect-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.disconnect-btn:active {
+  transform: scale(0.98);
+}
+
+/* Actions container */
+.db-actions {
+  display: flex;
+  flex-direction: column;   /* stack vertically */
+  gap: 8px;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* Both buttons take full width */
+.connect-btn,
+.new-btn {
+  width: 100%;
+}
+
+/* Primary (Save / Edit) */
+.connect-btn {
+  padding: 10px;
+  background: var(--color-accent);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.connect-btn:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+/* Secondary (New) */
+.new-btn {
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.new-btn:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text);
+}

@@ -1,0 +1,132 @@
+/* Panel */
+.results-panel {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+/* Header */
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.results-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Cache badge */
+.cache-badge {
+  font-size: 11px;
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Content */
+.results-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Blocks */
+.result-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.block-title {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* Response */
+.response-box {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* SQL */
+.result-code {
+  position: relative;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.result-code pre {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+/* Copy */
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 3px 6px;
+  font-size: 11px;
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* SQL header */
+.sql-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Toggle */
+.toggle-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text);
+}
+
+/* Error */
+.error-box {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--color-error);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+/* Loading */
+.loading {
+  font-size: 13px;
+  color: var(--color-accent);
+}

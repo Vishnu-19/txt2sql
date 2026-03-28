@@ -1,11 +1,11 @@
-# txt2sql: RAG Text-to-SQL MVP
+# QueryGenie: RAG Text-to-SQL
 
 
 ## Problem Statement
 Business users, product owners, and analysts often need insights from databases but lack the ability to write complex SQL queries. This creates a bottleneck, requiring constant support from data engineers or developers to translate questions into SQL, run them, and interpret the results. The process is slow, error-prone, and limits self-service analytics.
 
 ## Solution
-**txt2sql** enables anyone to ask questions about their data in plain English. It automatically:
+**QueryGenie** enables anyone to ask questions about their data in plain English. It automatically:
 - Converts natural language questions into accurate SQL queries
 - Executes those queries on your database (PostgreSQL or SQLite)
 - Returns both the raw data and a clear, concise natural language summary
@@ -15,7 +15,7 @@ This empowers non-technical users to get answers instantly, reduces engineering 
 ---
 
 ## Technical Overview
-txt2sql is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG) and OpenAI's GPT-4o-mini to generate context-aware SQL and summarize results. It features:
+QueryGenie is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG) and OpenAI's GPT-4o-mini to generate context-aware SQL and summarize results. It features:
 - RAG-based schema retrieval for improved SQL accuracy
 - LLM-powered SQL and text generation
 - In-memory caching for performance
@@ -30,7 +30,7 @@ txt2sql is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG)
 1. **Clone the repository:**
 	 ```sh
 	 git clone <repo-url>
-	 cd txt2sql
+	 cd QueryGenie
 	 ```
 2. **Install dependencies:**
 	 ```sh
