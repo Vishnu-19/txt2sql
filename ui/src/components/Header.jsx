@@ -20,7 +20,6 @@ function Header() {
         {/* Right: Actions */}
         <div className="header-right">
           <button className="header-btn">Docs</button>
-          <button className="header-btn primary">New Query</button>
         </div>
 
       </div>
