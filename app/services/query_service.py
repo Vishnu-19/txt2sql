@@ -57,7 +57,7 @@ def run_query_flow(db_config, question: str):
     limited_rows = rows[:20]
 
     # Step 8: Generate NL response
-    response_text = generate_response(question, sql, limited_rows)
+    response_text = generate_response(question, sql, schema_context,limited_rows)
 
     response = {
         "sql": sql,
