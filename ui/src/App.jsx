@@ -8,6 +8,7 @@ import './App.css';
 
 function App() {
   const [dbConfig, setDbConfig] = useState(null);
+  const [isConnected, setIsConnected] = useState(false);
   const [query, setQuery] = useState('');
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -15,12 +16,16 @@ function App() {
   const [copied, setCopied] = useState(false);
 
   const handleConnect = (config) => {
-    if (!config?.database && !config?.db_path) {
-      setError("Invalid database configuration");
-      return;
+    // Backend validation will handle the actual connection check
+    // Frontend just needs to store the config
+    if (config) {
+      setDbConfig(config);
+      setIsConnected(true);
+      setError(null);
+    } else {
+      setDbConfig(null);
+      setIsConnected(false);
     }
-    setDbConfig(config);
-    setError(null);
   };
 
   const handleSubmit = async (e) => {
@@ -30,8 +35,8 @@ function App() {
     setResult(null);
 
     try {
-      if (!dbConfig) {
-        throw new Error('Please configure database connection');
+      if (!dbConfig || !isConnected) {
+        throw new Error('Please connect to a database first');
       }
 
       const response = await fetch('http://localhost:8000/query', {
@@ -88,7 +93,6 @@ function App() {
           <aside className="sidebar">
             <DatabaseConfig
               onConnect={handleConnect}
-              isConnected={false} // 🔥 disable connected UI
             />
           </aside>
 
@@ -101,6 +105,7 @@ function App() {
               error={error}
               onSubmit={handleSubmit}
               onTemplateClick={() => {}}
+              isConnected={isConnected}
             />
 
             <ResultsDisplay

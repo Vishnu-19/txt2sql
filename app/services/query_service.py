@@ -1,5 +1,5 @@
 from sqlalchemy import text
-from app.db.connection import create_db_engine
+from app.db.connection import create_db_engine, test_connection, get_tables
 from app.db.schema import extract_schema
 from app.llm.text2sql import generate_sql, generate_response
 
@@ -13,6 +13,40 @@ from app.services.cache import (
     get_cached_query,
     set_cached_query
 )
+
+
+def validate_db_connection(db_config):
+    """
+    Validate database connection and return table information
+    """
+    try:
+        engine = create_db_engine(db_config)
+        
+        # Test connection
+        if not test_connection(engine):
+            return {
+                "success": False,
+                "message": "Connection test failed",
+                "tables": None,
+                "error": "Database did not respond to connection test"
+            }
+        
+        # Get tables
+        tables = get_tables(engine)
+        
+        return {
+            "success": True,
+            "message": f"Connected successfully. Found {len(tables)} tables.",
+            "tables": tables,
+            "error": None
+        }
+    except Exception as e:
+        return {
+            "success": False,
+            "message": "Connection failed",
+            "tables": None,
+            "error": str(e)
+        }
 
 
 def run_query_flow(db_config, question: str):

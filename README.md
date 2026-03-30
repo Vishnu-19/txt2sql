@@ -15,7 +15,7 @@ This empowers non-technical users to get answers instantly, reduces engineering 
 ---
 
 ## Technical Overview
-QueryGenie is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG) and OpenAI's GPT-4o-mini to generate context-aware SQL and summarize results. It features:
+QueryGenie is a FastAPI backend that leverages Retrieval-Augmented Generation (RAG) and OpenAI's models to generate context-aware SQL and summarize results. It features:
 - RAG-based schema retrieval for improved SQL accuracy
 - LLM-powered SQL and text generation
 - In-memory caching for performance
